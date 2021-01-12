@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>主页</title>
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link href="js/layui/css/layui.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body class="layui-layout-body" oncontextmenu="return false">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="img/avatars/1.png" class="layui-nav-img"></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left" id="menu">
+            <li class="layui-nav-item"><a href="javascript:;" target="my_iframe">主页</a></li>
+        </ul>
+		<ul id="user" class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="img/avatars/sunny.png" class="layui-nav-img">
+                    <span></span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;" target="my_iframe">修改密码</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="javascript:;">退出</a></li>
+        </ul>
+    </div>
+    
+    <div class="layui-side layui-bg-black">
+	    <div class="layui-side-scroll">
+	      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+	      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+	        <li class="layui-nav-item layui-nav-itemed">
+	          <a class="" href="javascript:;" target="my_iframe">数据中心</a>
+	          <dl class="layui-nav-child">
+	            <dd class="layui-this"><a href="page/quarters/quarter" target="my_iframe">季度维度</a></dd>
+	            <dd><a href="page/companys/company" target="my_iframe">公司维度</a></dd>
+	          </dl>
+	        </li>
+	      </ul>
+	    </div>
+	</div>
+  
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;" class="my-iframe-box">
+            <iframe src="page/quarters/quarter" frameborder="0" name="my_iframe" id="my_iframe" class="my_iframe" style="width: 100%;height: 110%;margin-top: -90px;"></iframe>
+        </div>
+    </div>
+
+</div>
+<script src="js/layui/layui.js"></script>
+<script>
+	//JavaScript代码区域
+    layui.use(['element','form'], function(){
+        var element = layui.element,
+        form = layui.form;
+        //监听导航点击
+        element.on('nav(nav)', function(elem){
+            var url = elem.attr("href");
+            var val = elem.text();
+            var faDom = elem.parents('.layui-nav-child').siblings("a");
+
+            var obj = new Object();
+            obj.url = url;
+            obj.val = val;
+            obj.faUrl = faDom.attr("href");
+            obj.faVal = faDom.text();
+            navStr(obj)
+        });
+    });
+	
+    function navStr(obj) {
+        console.log(obj)
+        var str = '<a href="'+obj.faUrl+'">'+obj.faVal+'</a><span>&gt;</span>'  +
+                    '<a><cite>'+obj.val+'</cite></a>';
+        $(".layui-breadcrumb").html(str);
+    }
+    function lineNavAdd() {
+        var str = '<a>首页</a><span>&gt;</span>'  +
+            '<a><cite>修改密码</cite></a>';
+        $(".layui-breadcrumb").html(str);
+    }
+</script>
+</body>
+</html>

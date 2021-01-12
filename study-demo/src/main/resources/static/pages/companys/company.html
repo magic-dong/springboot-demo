@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: header(~{::title},~{},~{::style})">
+	<meta charset="utf-8" />
+	<title>公司维度页面</title>
+	<style type="text/css">
+	  .layui-form-select {width: auto;}
+	  .layui-form-select .layui-input {width: 260px;}
+	</style>
+</head>
+<body>
+    <div class="padding-normal">
+        <div class="layui-row">
+            <div class="head-form layui-form-item ">
+                <form  class="layui-form" id="myform" action='#' onsubmit="return false;">
+                    <div class="layui-row">
+                    	<div class="layui-inline">
+	                        <label class="layui-form-label">数据接口</label>
+	                        <div class="layui-input-inline">
+	                            <select name="companyInterfaces" id="companyInterfaces" class="layui-input select-normal" lay-filter="companyInterfaces">
+	                                <option value="">请选择类型</option>
+	                            </select>
+	                        </div>
+	                    </div>
+                    	<div class="layui-inline">
+	                        <label class="layui-form-label">股票代码</label>
+	                        <div class="layui-input-inline">
+	                            <input type="text" class="layui-input select-long" name="secucode" id="secucode" placeholder="股票代码">
+	                        </div>
+	                    </div>
+	                    <div class="layui-inline">
+	                        <button type="button" id="searchBt" name="searchBt" data-id="searchBt" class="layui-btn-search"><i class="layui-icon layui-icon-search" ></i></button>
+	                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="layui-row layui-margin-top">
+            <button type="button" class="layui-btn layui-btn-normal" id="download" style="margin-left: 2px">下载</button>
+        </div>
+        <div class="layui-row">
+            <table class="layui-hide"  id="table" lay-filter="table"></table>
+        </div>
+    </div>
+    
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+	<script th:src="@{/js/jquery.min.js}" src="../../js/jquery.min.js"></script>
+    <script th:src="@{/js/layui/layui.js}" src="../../js/layui/layui.js"></script>
+	<!--/*/</th:block>/*/-->
+	
+    <script th:src="@{/js/pages/company.js}" src="../../js/pages/company.js"></script>
+</div>
+</body>
+</html>

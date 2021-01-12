@@ -1,0 +1,32 @@
+/*container{*/
+    /*min-width: 1662px;*/
+    /*width: 1662px;*/
+/*}*/
+.layui-breadcrumb-box{
+    height: 40px;
+    box-shadow: 0 2px 4px #dddddd;
+    line-height: 40px;
+}
+.my-iframe-box{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{
+    background-color: #009688;
+}
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+    background-color: #ffffff;
+}
+.layui-nav .layui-nav-item> a{
+    font-size: 16px;
+}
+.layui-breadcrumb a:hover{
+    color: #009688!important;
+}
+
+
+
+
