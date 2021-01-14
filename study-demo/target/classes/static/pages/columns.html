@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: header(~{::title},~{},~{})">
+	<meta charset="utf-8" />
+	<title>数据列页面</title>
+</head>
+<body>
+<div class="boix">
+    <form class="layui-form" id="myform" onsubmit="return false">
+
+        
+        <div class="layui-row layui-margin-top">
+            <label class="layui-form-label">数据接口</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name"  id="name" th:value="${interfaces.name}" placeholder="" readonly="readonly" class="layui-input input-bg">
+            </div>
+        </div>
+        <div class="layui-row layui-margin-top">
+            <span class="label">数据列</span>
+            <span class="zTreeDemoBackground left layui-margin-top">
+                <ul id="treeDemo" class="ztree"></ul>
+            </span>
+        </div>
+
+    </form>
+</div>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script th:src="@{/js/jquery.min.js}" src="../js/jquery.min.js"></script>
+<script th:src="@{/js/layui/layui.js}" src="../js/layui/layui.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script th:src="@{/js/pages/columns.js?v=1.0.0}" src="../js/pages/columns.js?v=1.0.0"></script>
+<script type="text/javascript" th:inline="javascript">
+	//var interfaceId=/*[[${interfaces.interfaceId}]]*/null;
+	//console.log(interfaceId);
+	var columns=/*[[${entities}]]*/null;
+	//console.log(columns);
+	if(columns!=null&&columns.length>0){
+		//加载树形数据
+		$.fn.zTree.init($("#treeDemo"), getSettting(), getMenuTree(columns));
+	}
+	//用于向父窗口传参
+	function initTreeObj(){
+		return $.fn.zTree.getZTreeObj("treeDemo");
+	}
+</script>
+</body>
+</html>

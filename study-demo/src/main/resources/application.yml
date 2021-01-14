@@ -86,10 +86,23 @@ spring:
             port: 994
             class: javax.net.ssl.SSLSocketFactory
             fallback: false
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        # 排除端点
+        exclude: shutdown
+  endpoint:
+    health:
+      # 详细信息显示给所有用户。
+      show-details: always
               
 #Mybatis配置    
 mybatis:
-  type-aliases-package: com.cnstock
+  type-aliases-package: com.lzd.learn
   mapper-locations: classpath:/mapper/**/*Mapper.xml
   configLocation: classpath:mybatis-config.xml
   

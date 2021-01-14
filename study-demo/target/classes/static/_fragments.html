@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header(title,links,styles)">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:replace="${title}">TITLE</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link th:href="@{/img/favicon.ico}" href="img/favicon.ico" rel="shortcut icon">
+	<link th:href="@{/js/layui/css/layui.css}" href="js/layui/css/layui.css" rel="stylesheet">
+	<link th:href="@{/js/zTree/css/zTreeStyle/zTreeStyle.css}" href="js/zTree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+    <link th:href="@{/css/base.css}" href="css/base.css" rel="stylesheet">
+    <link th:href="@{/css/common.css}" href="css/common.css" rel="stylesheet">
+    <th:block th:replace="${links}" />
+    <th:block th:replace="${styles}" />
+</head>
+<body>
+	<!--js文件-->
+	<th:block th:fragment="script">
+		<script th:src="@{/js/jquery.min.js}" src="js/jquery.min.js"></script>
+	    <script th:src="@{/js/layui/layui.js}" src="js/layui/layui.js"></script>
+	    <script th:src="@{/js/zTree/js/jquery.ztree.core.js}" src="js/zTree/js/jquery.ztree.core.js"></script>
+	    <script th:src="@{/js/zTree/js/jquery.ztree.excheck.js}" src="js/zTree/js/jquery.ztree.excheck.js"></script>
+	    <script th:src="@{/js/common.js?v=1.0.0}" src="js/common.js?v=1.0.0"></script>
+		<script th:inline="javascript"> var ctx = [[@{/}]]; </script>
+	</th:block>
+</body>
+</html>

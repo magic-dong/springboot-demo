@@ -1,0 +1,133 @@
+.layui-layout-admin .layui-header{
+    background: -webkit-linear-gradient(left, #23262E , #696A6F); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right,  #23262E, #696A6F); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right,  #23262E, #696A6F); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right,  #23262E , #696A6F); /* 鏍囧噯鐨勮娉曪紙蹇呴』鏀惧湪鏈�鍚庯級 */
+}
+.layui-nav-bar{
+    background: #ffffff;
+}
+
+.layui-layout-admin .layui-bg-black{
+	 background-color: #696A6F!important;
+}
+
+.layui-side .layui-nav{
+	background-color: #696A6F;
+    color: #fff;
+}
+
+.layui-nav-child{
+    /*background-color:rgba(91,105,118,0.7) ;*/
+    background-color: #fff;
+    color: #999;
+    box-shadow: 0 3px 10px #ddd ;
+}
+
+.layui-nav .layui-nav-child a{
+    color: #999;
+}
+.layui-nav .layui-nav-child a:hover{
+    background-color: #c0c0c0;
+    color: #ffffff;
+}
+
+td .layui-icon{
+	color: #999;
+}
+.layui-form-checkbox >.layui-icon{
+	color:#fff;
+}
+.layui-btn >.layui-icon{
+    color: #fff;
+}
+/*---------------------------------*/
+html,body{
+    font-size: 12px;
+}
+.container{
+    width: 1662px;
+    margin: 0 auto;
+}
+.input{
+    width: 180px;
+    height: 30px;
+}
+.layui-form-label{
+    padding: 5px;
+}
+.head-form{
+    border:1px solid #d8dae2;
+    padding: 20px;
+}
+.layui-btn-search{
+    width: 30px;
+    height: 28px;
+    background-color: #009688;
+    border:none;
+}
+.layui-btn-search:hover{
+    opacity: 0.7;
+}
+.layui-icon-search{
+    color: #ffffff;
+}
+.layui-margin-top{
+    margin-top: 20px;
+}
+.layui-btn{
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+}
+.layui-btn-normal{
+    background-color: #009688;
+}
+.layui-table-page{
+    text-align: right;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #009688;
+}
+.layui-icon:hover{
+    color: #5a98ff;
+}
+body .layer-open .layui-layer-title{
+    background:#009688; color:#fff; border: none;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-topright: 2px;
+}
+/*body .demo-class .layui-layer-btn{border-top:1px solid #E9E7E7}*/
+body .layer-open .layui-layer-btn a{background:#009688;}
+body .layer-open .layui-layer-btn .layui-layer-btn1{background:#fff;}
+ .layui-table[lay-even] tr:nth-child(even){
+     background-color: #fff;
+ }
+.layui-table tbody tr:hover ,.layui-table-hover{
+    background-color: #eff8ff!important;
+}
+.layui-input{
+    height: 30px;
+}
+.layui-btn-bg{
+    background-color: #009688;
+    width: auto;
+    padding:0 10px;
+}
+.layui-form-select{
+    width: 180px;
+}
+.layui-btn:hover{
+    opacity: 1;
+}
+.layui-btn-normal:hover{
+    background-color: #009688;
+    font-weight: bold;
+}
+.layui-form-checked[lay-skin=primary] i{
+    background-color: #009688;
+    border-color:#009688;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i{
+    border-color: #009688;
+}

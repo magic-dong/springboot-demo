@@ -1,0 +1,77 @@
+spring:
+  datasource:
+     type: com.alibaba.druid.pool.DruidDataSource
+     druid:
+       #Mysql数据库
+       master:
+         driver-class-name: com.mysql.jdbc.Driver
+         url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+         username: root
+         password: root
+       #Oracle数据库
+       slave:
+         driver-class-name: oracle.jdbc.driver.OracleDriver
+         url:  jdbc:oracle:thin:@172.20.1.102:1521:jydb
+         username: jydb
+         password: 123456
+         #开关/默认 开启
+         enabled: true
+       # 初始连接数
+       initialSize: 10
+       # 最小连接池数量
+       minIdle: 5
+       # 最大连接池数量
+       maxActive: 30
+       # 配置获取连接等待超时的时间
+       maxWait: 60000
+       # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+       timeBetweenEvictionRunsMillis: 60000
+       # 配置一个连接在池中最小生存的时间，单位是毫秒
+       minEvictableIdleTimeMillis: 1800000
+       validationQuery: SELECT 1 FROM DUAL
+       # 配置是否有空闲连接
+       testWhileIdle: true
+       # 配置是否在从池中取出连接前进行检验,若检验失败,则从池中去除连接并尝试取出另一个
+       testOnBorrow: false
+       # 配置是否在归还到池中前进行检验
+       testOnReturn: false
+       # 配置连接出错后重试机制，默认false
+       #false:若连接失败会一直重试，新的请求都会尝试去数据库请求
+       #true:重试设置次数后，就算数据库服务恢复，也不进行重连，必须重启应用程序
+       #breakAfterAcquireFailure: false
+       #连接出错后重试次数，默认为1
+       #connectionErrorRetryAttempts: 1
+       # 配置连接出错后重试时间间隔，单位毫秒
+       #timeBetweenConnectErrorMillis: 30000
+       poolPreparedStatements: true
+       maxPoolPreparedStatementPerConnectionSize: 20
+       filters: stat,log4j,wall
+       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  
+#日志
+logging:
+  level:
+    org.thymeleaf: error
+  config: classpath:logback-admin.xml
+log:
+  level:
+    root: info
+    my: debug
+  file: /data/logs/study-demo.log
+  #日志文件最大xxMB
+  maxSize: 30MB 
+  #保存xx天的日志
+  maxHistory: 20
+  #日志文件所在储存空间最大xxGB
+  totalSizeCap: 10GB  
+  
+# 项目相关配置
+quotation:
+  # 名称
+  name: study-demo
+  # 版本
+  version: 1.0.0
+  # 版权年份
+  copyrightYear: 2019
+  # 文件上传路径
+  profile: /usr/local/profile/ 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: header(~{::title},~{},~{})">
+	<meta charset="utf-8" />
+	<title>季度维度页面</title>
+</head>
+<body>
+    <div class="padding-normal">
+        <div class="layui-row">
+            <div class="head-form layui-form-item ">
+                <form  class="layui-form" id="myform" action='#' onsubmit="return false">
+                    <div class="layui-row">
+                     	<div class="layui-inline">
+	                        <label class="layui-form-label">数据接口</label>
+	                        <div class="layui-input-inline">
+	                            <select name="quarterInterfaces" id="quarterInterfaces" class="layui-input select-normal" lay-filter="quarterInterfaces">
+	                                <option value="">请选择类型</option>
+	                            </select>
+	                        </div>
+	                    </div>
+                    	<div class="layui-inline">
+	                        <label class="layui-form-label">年份</label>
+	                        <div class="layui-input-inline">
+	                            <input type="text" class="layui-input select-long" name="year" id="year" placeholder="请选择年份">
+	                        </div>
+	                        <div class="layui-input-inline">
+	                            <select name="date" id="date" class="layui-input select-normal">
+	                                <option value="">请选择截止日期类型</option>
+	                                <option value="03-31">一季度</option>
+	                                <option value="06-30">半年报</option>
+	                                <option value="09-30">三季度</option>
+	                                <option value="12-31">年报</option>
+	                            </select>
+	                        </div>
+	                    </div>
+	                    <div class="layui-inline layui-hide">
+	                        <label class="layui-form-label">股票代码</label>
+	                        <div class="layui-input-inline">
+	                            <input type="text" class="layui-input select-long" name="secucode" id="secucode" placeholder="请输入股票代码">
+	                        </div>
+	                    </div>
+	                    <div class="layui-inline">
+	                        <button type="button" id="searchBt" name="searchBt" data-id="searchBt" class="layui-btn-search"><i class="layui-icon layui-icon-search" ></i></button>
+	                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="layui-row layui-margin-top">
+            <button type="button" class="layui-btn layui-btn-normal" id="download" style="margin-left: 2px">下载</button>
+        </div>
+        <div class="layui-row">
+            <table class="layui-hide"  id="table" lay-filter="table"></table>
+        </div>
+    </div>
+    
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+	<script th:src="@{/js/jquery.min.js}" src="../../js/jquery.min.js"></script>
+    <script th:src="@{/js/layui/layui.js}" src="../../js/layui/layui.js"></script>
+	<!--/*/</th:block>/*/-->
+	
+    <script th:src="@{/js/pages/quarter.js}" src="../../js/pages/quarter.js"></script>
+</div>
+</body>
+</html>

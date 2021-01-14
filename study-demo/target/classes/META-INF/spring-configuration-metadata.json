@@ -1,0 +1,114 @@
+{
+  "groups": [
+    {
+      "name": "async-task.executor",
+      "type": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "spring.datasource.druid.master",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.lzd.learn.config.DruidConfig",
+      "sourceMethod": "public javax.sql.DataSource mysqlDataSource() "
+    },
+    {
+      "name": "spring.datasource.druid.slave",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.lzd.learn.config.DruidConfig",
+      "sourceMethod": "public javax.sql.DataSource oracleDataSource() "
+    },
+    {
+      "name": "spring.redis",
+      "type": "com.lzd.learn.config.RedisConfig$RedisProperties",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "async-task.executor.core-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "async-task.executor.keep-alive-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "async-task.executor.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "async-task.executor.queue-capacity",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "async-task.executor.thread-name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.lzd.learn.config.AsyncTaskExecutorConfig$AsyncTaskExecutorProperties"
+    },
+    {
+      "name": "spring.redis.host",
+      "type": "java.lang.String",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.max-total",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.max-wait-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.num-tests-per-eviction-run",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.time-between-eviction-runs-millis",
+      "type": "java.lang.Long",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    },
+    {
+      "name": "spring.redis.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lzd.learn.config.RedisConfig$RedisProperties"
+    }
+  ],
+  "hints": []
+}
